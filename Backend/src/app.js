@@ -10,9 +10,12 @@ app.use(express.json());
 app.use(cookieParser()); 
 
 
-app.use(cors({  
-    origin: 'http://localhost:5173', // frontend URL
-    credentials: true, // Allow cookies to be sent and received
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://gen-ai-reume-project-frontend.onrender.com"
+  ],
+  credentials: true
 }));
 
 const interviewRouter = require("./routes/interview.route")
