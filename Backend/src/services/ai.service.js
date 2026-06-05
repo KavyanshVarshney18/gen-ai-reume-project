@@ -1,5 +1,9 @@
 const { GoogleGenAI } = require("@google/genai");
-const puppeteer = require("puppeteer");
+//const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
+const chromium = require("@sparticuz/chromium");
+
+
 const zod = require("zod");
 const z = zod;
 
@@ -89,9 +93,15 @@ async function generatepdffromhtml(htmlcontent) {
     try {
         console.log("Launching browser...");
 
+        // const browser = await puppeteer.launch({
+        //     headless: true,
+        //     args: ["--no-sandbox", "--disable-setuid-sandbox"]
+        // });
         const browser = await puppeteer.launch({
-            headless: true,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath(),
+            headless: chromium.headless,
         });
 
         console.log("Opening page...");
