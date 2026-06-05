@@ -4,7 +4,7 @@ import axios from "axios";
 export async function register( { username , email , password} ){
 
     try{
-        const response = await axios.post('http://localhost:3000/api/auth/register', 
+        const response = await axios.post('https://gen-ai-reume-project-1.onrender.com/api/auth/register', 
             { username, email, password } ,
         {
             withCredentials : true    //to send cookies to the server and also receive cookies from the server
@@ -20,7 +20,7 @@ export async function register( { username , email , password} ){
 export async function login( { email , password} ){
 
     try{
-        const response = await axios.post('http://localhost:3000/api/auth/login', 
+        const response = await axios.post('https://gen-ai-reume-project-1.onrender.com/api/auth/login', 
             {email, password } ,
         {
             withCredentials : true    //to send cookies to the server and also receive cookies from the server
@@ -36,7 +36,7 @@ export async function login( { email , password} ){
 export async function logout(){
 
     try{
-        const response = await axios.post('http://localhost:3000/api/auth/logout', 
+        const response = await axios.post('https://gen-ai-reume-project-1.onrender.com/api/auth/logout', 
         {
             withCredentials : true    //to send cookies to the server and also receive cookies from the server
         });
@@ -50,7 +50,7 @@ export async function logout(){
 
 export async function getme() {
     try {
-        const response = await axios.get('http://localhost:3000/api/auth/me', {
+        const response = await axios.get('https://gen-ai-reume-project-1.onrender.com/api/auth/me', {
             withCredentials: true
         });
         return response.data;
