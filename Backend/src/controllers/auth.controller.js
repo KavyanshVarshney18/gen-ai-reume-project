@@ -13,8 +13,9 @@ const jwt = require('jsonwebtoken');
 // at the top, define once and reuse
 const cookieOptions = {
     httpOnly: true,
-    sameSite: 'lax',
-    maxAge: 24 * 60 * 60 * 1000  // 1 day
+    secure: true,
+    sameSite: 'none',
+    maxAge: 24 * 60 * 60 * 1000
 };
 
 //controller function for user registration
