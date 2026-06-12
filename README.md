@@ -120,4 +120,4 @@ GEMINI_API_KEY=
 
 ## Author
 
-Developed by Kavya Varshney
+Developed by Kavyansh Varshney
